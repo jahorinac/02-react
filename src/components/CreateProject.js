@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 class CreateProject extends Component{
     render() {
+        console.log(this.props)
         return(
-            <h2>To to</h2>
+            <h2>{this.props.value}</h2>
         )
     }
 }
