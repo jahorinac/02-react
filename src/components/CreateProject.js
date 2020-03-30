@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class CreateProject extends Component{
     render() {
-        console.log(this.props)
         return(
-            <h2>{this.props.value}</h2>
+            <div className="container">
+                <h2>Projects</h2>
+                <Link to='/'>Back</Link>
+            </div>
         )
     }
 }
