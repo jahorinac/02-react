@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import MainPage from './components/MainPage'
+import MainPage, { MyContext } from './components/MainPage'
 import CreateProject from './components/CreateProject'
 
 
@@ -11,12 +11,11 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div className="App">
-                    <MainPage>
-                        <CreateProject/>
-                    </MainPage>
                     <Switch>
-                        <Route exact path='/' component={MainPage}/>
-                        <Route path='/create' component={CreateProject}/>
+                        <MyContext.Provider value="Hello from Provider">
+                            <Route exact path='/' component={MainPage}/>
+                            <Route path='/create' component={CreateProject}/>
+                        </MyContext.Provider>
                     </Switch>
                 </div>
             </BrowserRouter>

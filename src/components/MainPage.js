@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const MyContext = React.createContext("anything");
 
-const MyContextConsumer = MyContext.Consumer;
-
-const someData = {title: "Hello World"};
+// const MyContextConsumer = MyContext.Consumer;
+//
+// const someData = {title: "Hello World"};
 
 
 class MainPage extends Component{
@@ -15,10 +15,11 @@ class MainPage extends Component{
         return(
             <div className="main">
                 <Link to='/create'>Create Project</Link>
-                <MyContext.Provider value={someData}>{this.props.children}</MyContext.Provider>
+                {/*<MyContext.Provider value={someData}>{this.props.children}</MyContext.Provider>*/}
             </div>
         )
     }
 }
-export { MyContextConsumer };
+export { MyContext };
+//export { MyContextConsumer };
 export default MainPage;

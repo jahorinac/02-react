@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { MyContextConsumer } from './MainPage'
+import { MyContext } from './MainPage'
 
 
 class CreateProject extends Component{
@@ -9,7 +9,13 @@ class CreateProject extends Component{
             <div className="container">
                 <h2>Projects</h2>
                 <Link to='/'>Back</Link>
-                <MyContextConsumer>{({ title }) => <h1>{title}</h1>}</MyContextConsumer>
+                <MyContext.Consumer>
+                    { value => (
+                        <p>
+                            {value}
+                        </p>
+                    )}
+                </MyContext.Consumer>
             </div>
         )
     }
