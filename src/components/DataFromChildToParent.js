@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
 class DataFromChildToParent extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            counter2: "state from child"
-        }
+
+    state = {
+        counter2: "state from child"
     }
 
     render(){

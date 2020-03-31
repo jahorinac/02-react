@@ -6,11 +6,9 @@ import DataFromChildToParent from './components/DataFromChildToParent'
 
 
 class App extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            counter: "state from parent"
-        }
+
+    state = {
+        counter: "state from parent"
     }
 
     update(value){
