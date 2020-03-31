@@ -4,7 +4,6 @@ import MainPage from './components/MainPage'
 import CreateProject from './components/CreateProject'
 
 
-
 class App extends Component {
 
     render() {
@@ -12,6 +11,9 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div className="App">
+                    <MainPage>
+                        <CreateProject/>
+                    </MainPage>
                     <Switch>
                         <Route exact path='/' component={MainPage}/>
                         <Route path='/create' component={CreateProject}/>
