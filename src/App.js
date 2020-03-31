@@ -12,6 +12,7 @@ class App extends Component {
             <BrowserRouter>
                 <div className="App">
                     <Switch>
+                        //ToDo - realize Provider/Consumer simpler (example in bookmark)
                         <MyContext.Provider value="Hello from Provider">
                             <Route exact path='/' component={MainPage}/>
                             <Route path='/create' component={CreateProject}/>
