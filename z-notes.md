@@ -6,4 +6,5 @@
 004 - data from one component to another - react context, (but problem with router)
 005 - realize simple react context (from parent to child) with react router
 006 - pass data from child to parent
+007 - !!! pass data from child to grandparent and from grandparent to child 
 

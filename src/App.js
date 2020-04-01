@@ -2,34 +2,34 @@ import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import MainPage, { MyContext } from './components/MainPage'
 import CreateProject from './components/CreateProject'
-import DataFromChildToParent from './components/DataFromChildToParent'
+
 
 
 class App extends Component {
 
     state = {
-        counter: "state from parent"
+        source: "state from grandparent",
     }
 
     update(value){
         return ()=>{
             this.setState({
-                counter: value
+                state: value
             })
         }
     }
 
     render() {
-
         return (
             <BrowserRouter>
                 <div className="App">
-                    <span>{this.state.counter}</span>
-                    <DataFromChildToParent data={this.update.bind(this)}/>
+                    <span>{this.state.source}</span>
                     <Switch>
                         //ToDo - realize Provider/Consumer simpler (example in bookmark)
-                        <MyContext.Provider value="Hello from Provider">
-                            <Route exact path='/' component={MainPage}/>
+                        <MyContext.Provider value="Hello from Context Parent">
+                            <Route exact path='/'
+                            render={(routeProps) => (<MainPage {...routeProps} propFromGrandParent={this.update.bind(this)}/>)}
+                            />
                             <Route path='/create' component={CreateProject}/>
                         </MyContext.Provider>
                     </Switch>
