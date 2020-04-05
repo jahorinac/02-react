@@ -11,12 +11,10 @@ class App extends Component {
         source: "state from grandparent",
     }
 
-    update(value){
-        return ()=>{
-            this.setState({
-                state: value
-            })
-        }
+    update = value => {
+        this.setState({
+            source: value
+        })
     }
 
     render() {
@@ -28,7 +26,7 @@ class App extends Component {
                         //ToDo - realize Provider/Consumer simpler (example in bookmark)
                         <MyContext.Provider value="Hello from Context Parent">
                             <Route exact path='/'
-                            render={(routeProps) => (<MainPage {...routeProps} propFromGrandParent={this.update.bind(this)}/>)}
+                            render={(routeProps) => (<MainPage {...routeProps} propFromGrandParent={this.update}/>)}
                             />
                             <Route path='/create' component={CreateProject}/>
                         </MyContext.Provider>
